@@ -1,0 +1,5 @@
+CREATE DATABASE vicinitix;
+
+CREATE USER admin WITH PASSWORD 'password';
+
+GRANT ALL PRIVILEGES ON DATABASE vicinitix TO admin;

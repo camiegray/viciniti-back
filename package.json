@@ -1,0 +1,12 @@
+{
+  "name": "viciniti",
+  "dependencies": {
+    "@mui/x-date-pickers": "^8.3.0",
+    "date-fns": "^4.1.0"
+  },
+  "scripts": {
+    "start": "concurrently \"cd frontend && npm start\" \"python3 manage.py runserver 0.0.0.0:8000\"",
+    "start:frontend": "cd frontend && npm start",
+    "start:backend": "python3 manage.py runserver 0.0.0.0:8000"
+  }
+}

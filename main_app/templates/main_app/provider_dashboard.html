@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %}Provider Dashboard - Viciniti{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 mb-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Provider Dashboard</h2>
+            <a href="{% url 'service_create' %}" class="btn btn-primary">Add New Service</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Services Section -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h3>My Services</h3>
+            </div>
+            <div class="card-body">
+                {% if user.provider_profile.services.all %}
+                    <div class="list-group">
+                        {% for service in user.provider_profile.services.all %}
+                            <div class="list-group-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">{{ service.name }}</h5>
+                                        <p class="mb-1">{{ service.description }}</p>
+                                        <small>Duration: {{ service.duration }} minutes | Price: ${{ service.price }}</small>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" {% if service.is_active %}checked{% endif %}>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>No services added yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Upcoming Appointments Section -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h3>Upcoming Appointments</h3>
+            </div>
+            <div class="card-body">
+                {% if appointments %}
+                    <div class="list-group">
+                        {% for appointment in appointments %}
+                            <div class="list-group-item">
+                                <h5 class="mb-1">{{ appointment.service.name }}</h5>
+                                <p class="mb-1">Client: {{ appointment.consumer.username }}</p>
+                                <p class="mb-1">Date: {{ appointment.start_time|date:"F j, Y" }}</p>
+                                <p class="mb-1">Time: {{ appointment.start_time|time:"g:i A" }} - {{ appointment.end_time|time:"g:i A" }}</p>
+                                <span class="badge bg-{{ appointment.status }}">{{ appointment.status|title }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>No upcoming appointments.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Business Hours Section -->
+<div class="row">
+    <div class="col-md-12 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h3>Business Hours</h3>
+            </div>
+            <div class="card-body">
+                <form method="post" action="{% url 'update_business_hours' %}">
+                    {% csrf_token %}
+                    <div class="row">
+                        {% for day in "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday"|split:"," %}
+                            <div class="col-md-6 mb-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5>{{ day }}</h5>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label>Open</label>
+                                                <input type="time" class="form-control" name="{{ day|lower }}_open">
+                                            </div>
+                                            <div class="col-6">
+                                                <label>Close</label>
+                                                <input type="time" class="form-control" name="{{ day|lower }}_close">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Business Hours</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
