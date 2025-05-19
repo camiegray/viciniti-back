@@ -12,7 +12,11 @@ bleach = "*"
 geopy = "*"
 django-leaflet = "*"
 python-dateutil = "*"
-django-geojson = {git = "https://github.com/makinacorpus/django-geojson.git", ref = "master"}
+gunicorn = "*"
+whitenoise = "*"
+python-dotenv = "*"
+dj-database-url = "*"
+django-geojson = {git = "https://github.com/makinacorpus/django-geojson.git", egg = "django-geojson"}
 
 [dev-packages]
 
