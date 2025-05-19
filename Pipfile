@@ -16,7 +16,7 @@ gunicorn = "*"
 whitenoise = "*"
 python-dotenv = "*"
 dj-database-url = "*"
-django-geojson = {git = "https://github.com/makinacorpus/django-geojson.git", egg = "django-geojson"}
+django-geojson = "*"
 
 [dev-packages]
 

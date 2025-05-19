@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'leaflet',
-    'django_geojson',
+    'djgeojson',
     'main_app',
 ]
 

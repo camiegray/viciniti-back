@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "dc5f6f27283f1be8bb2068d89b7ea411794c4a5b1d9d9e075a71771c401b33d6"
+            "sha256": "0def2ba539a6208975d845645eda892f07533a92f4f35d4bf32eeb39bf5ee5fe"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -60,9 +60,13 @@
             "version": "==4.7.0"
         },
         "django-geojson": {
-            "git": "https://github.com/makinacorpus/django-geojson.git",
+            "hashes": [
+                "sha256:1d35a22384c89165cfc5a47c3033b918b1035b86bd3862500a003e93cecb7816",
+                "sha256:bdee93c1915147cbd37ee6299c1eaa588d86693f8402f48b0803825eee6bf23b"
+            ],
+            "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "ref": "9134370e43d30f78baf44fa0c847ffbe7ae3db33"
+            "version": "==4.2.0"
         },
         "django-leaflet": {
             "hashes": [
