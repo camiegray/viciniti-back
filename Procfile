@@ -1,1 +1,1 @@
-web: gunicorn viciniti.wsgi:application 
+web: gunicorn viciniti.wsgi --log-file - 
