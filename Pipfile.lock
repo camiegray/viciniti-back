@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a7af25549816b8d4fb725e594d683e5cb50e38e73d59625bc1a683a7d6ea7a5a"
+            "sha256": "4f761a395041eb9e389c3dca9d2c5b226ae9bd3a2de1c1a0a57f195ccf515ee7"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -50,6 +50,20 @@
             "index": "pypi",
             "markers": "python_version >= '3.9'",
             "version": "==4.7.0"
+        },
+        "django-geojson": {
+            "git": "https://github.com/makinacorpus/django-geojson.git",
+            "markers": "python_version >= '3.8'",
+            "ref": "9134370e43d30f78baf44fa0c847ffbe7ae3db33"
+        },
+        "django-leaflet": {
+            "hashes": [
+                "sha256:013ccb06ee08071caec98a65dffd68ab3694dafce72caff34f3d78f35568ae25",
+                "sha256:a17d8e6cc05dd98e8e543fbf198b81dabbf9f195c222e786d1686aeda91c1aa8"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.9'",
+            "version": "==0.32.0"
         },
         "djangorestframework": {
             "hashes": [
@@ -151,6 +165,23 @@
             "index": "pypi",
             "markers": "python_version >= '3.8'",
             "version": "==2.9.10"
+        },
+        "python-dateutil": {
+            "hashes": [
+                "sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3",
+                "sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2'",
+            "version": "==2.9.0.post0"
+        },
+        "six": {
+            "hashes": [
+                "sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+                "sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2'",
+            "version": "==1.17.0"
         },
         "sqlparse": {
             "hashes": [

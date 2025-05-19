@@ -10,6 +10,9 @@ psycopg2-binary = "*"
 djangorestframework = "*"
 bleach = "*"
 geopy = "*"
+django-leaflet = "*"
+python-dateutil = "*"
+django-geojson = {git = "https://github.com/makinacorpus/django-geojson.git", ref = "master"}
 
 [dev-packages]
 
